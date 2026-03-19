@@ -38,11 +38,11 @@
             <form action="valida_login.php">
 
               <div class="form-group">
-                <input type="email" class="form-control" placeholder="E-mail">
+                <input type="email" name="email" class="form-control" placeholder="E-mail">
               </div>
 
               <div class="form-group">
-                <input type="password" class="form-control" placeholder="Password">
+                <input type="password" name="password" class="form-control" placeholder="Password">
               </div>
 
               <button type="submit" class="btn btn-lg btn-info btn-block">Entrar</button>

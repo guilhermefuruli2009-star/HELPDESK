@@ -1,3 +1,11 @@
 <?php
-    echo "Funcionando";
+    //echo "Funcionando";
+
+    echo $_GET['email'];
+    echo "<br>";
+    echo $_GET['password'];
+    
+
+
+    
 ?>
