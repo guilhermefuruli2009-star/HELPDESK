@@ -28,7 +28,7 @@
         echo "Usuário autenticado";
     } else {
         echo "Erro de autenticação";
-    };
+    }
     
 
 
