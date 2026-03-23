@@ -1,31 +1,36 @@
 <?php
-//echo "Funcionando";
-
-//echo $_GET['email'];
-//echo "<br>";
-//echo $_GET['password'];
-
-//echo $_POST['email'];
-//echo "<br>";
-//echo $_POST['password'];
-
-//Usuarios do sistema
-
+ 
+    session_start();
+ 
+// echo 'Funcionando...';
+ 
+// echo $_POST['email'];
+// echo '<br>';
+// echo $_POST['senha'];
+ 
+// echo $_POST['email'];
+// echo '<br>';
+// echo $_POST['senha'];
+ 
 $usuario_autenticado = false;
-
-$usuario_app = array(
-    array("email" => "admin@test.com.br", "password" => "123456"),
-    array("email" => "user@test.com.br", "password" => "abcdef")
+ 
+// Usuários do Sistema
+$usuarios_app = array(
+    array('email' => 'admin@teste.com.br', 'senha' => '123456'),
+    array('email' => 'user@teste.com.br', 'senha' => 'abcd')
 );
-
-foreach ($usuario_app as $user) {
-    if ($user['email'] == $_POST['email'] && $user['password'] == $_POST['password']) {
+ 
+foreach ($usuarios_app as $user) {
+    if ($user['email'] == $_POST['email'] && $user['senha'] == $_POST['senha']) {
         $usuario_autenticado = true;
     }
 }
-
-if ($usuario_autenticado) { //usuario_autenticado == true
-    echo "Usuário autenticado";
+ 
+if ($usuario_autenticado) {
+    echo 'Usuário Autenticado';
+    $_SESSION['autenticado'] = 'SIM';
 } else {
+    // echo 'Erro de Autenticação';
+    $_SESSION['autenticado'] = 'NAO';
     header('Location: index.php?login=erro');
 }
