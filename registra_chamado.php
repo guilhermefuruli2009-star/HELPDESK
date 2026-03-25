@@ -4,9 +4,20 @@ echo '<pre>';
 print_r($_POST);
 echo '</pre>';
 
-$texto = $_POST['titulo'] . '#' . $_POST['categoria'] . '#' . $_POST['descricao'] . PHP_EOL;
+    $titulo = str_replace('#', '-', $_POST['titulo']);
+    $categoria = str_replace('#', '-', $_POST['categoria']);
+    $descricao = str_replace('#', '-', $_POST['descricao']);
 
 
-echo $texto;
+
+
+$texto = $titulo . '#' . $categoria . '#' . $descricao . PHP_EOL;
+
+//echo $texto;
+
+$arquivo = fopen('arquivo.hd', 'a');
+fwrite($arquivo, $texto);
+fclose($arquivo);
+
 
 ?>
